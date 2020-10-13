@@ -1,0 +1,4 @@
+
+Windows: Not Free, Open source: NO, Security: Vulnerable to viruses and malware attacks, File system: AT,FAT32,NTS, ReFs, Separation of the directories: Back Slash, Type of kernel: Microkernel, File Names: case sensitive
+
+Linux: Free, Open source: Yes, Security: more secure, File system: AExT2, EXT3, EXT4,XFS,JFS, Separation of the directories: Forward Slash, Type of kernel: Monolithic kernel, File Names: case insensitive   
