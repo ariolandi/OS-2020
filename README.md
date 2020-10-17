@@ -11,7 +11,10 @@
 -------------------------------------------------------------
 
 https://linuxjourney.com/
+
 http://linuxcommand.org/tlcl.php
+
 https://www.tldp.org/
+
 http://www.linfo.org/
 
