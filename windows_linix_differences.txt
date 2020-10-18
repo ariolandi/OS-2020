@@ -2,3 +2,61 @@
 Windows: Not Free, Open source: NO, Security: Vulnerable to viruses and malware attacks, File system: AT,FAT32,NTS, ReFs, Separation of the directories: Back Slash, Type of kernel: Microkernel, File Names: case sensitive
 
 Linux: Free, Open source: Yes, Security: more secure, File system: AExT2, EXT3, EXT4,XFS,JFS, Separation of the directories: Forward Slash, Type of kernel: Monolithic kernel, File Names: case insensitive   
+
+package com.sap.orca.svc.hana.migration.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface AuditLogResponse {}
+
+
+package com.sap.orca.svc.hana.migration.aspects;
+
+import javax.ws.rs.core.Response;
+
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+import com.sap.cloud.auditlog.exception.AuditLogWriteException;
+
+@Aspect
+@Component
+public class AuditLoggingAspect {
+	public static final String AUDIT_LOG_ERROR_MESSAGE = "AUDIT_LOG_ERROR_MESSAGE";
+	
+	@AfterThrowing(value = "@annotation(com.sap.orca.svc.hana.migration.annotations.AuditLogResponse)", throwing="e")
+	public Response auditLogAdvice(AuditLogWriteException e) {
+		return Response.serverError().header(AUDIT_LOG_ERROR_MESSAGE, e.getMessage()).build();
+	}
+}
+
+
+
+
+package com.sap.orca.svc.hana.migration.auditlog.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sap.cloud.auditlog.AuditLogMessageFactory;
+import com.sap.cloud.auditlog.SecurityEventAuditMessage;
+import com.sap.cloud.auditlog.exception.AuditLogWriteException;
+import com.sap.orca.svc.hana.migration.auditlog.AuditLogClient;
+
+public class AuditLogClientImpl implements AuditLogClient {
+	@Autowired
+	private AuditLogMessageFactory auditLogMessageFactory;
+	
+	public void auditLogSecurityEvent(String action, String log, String attribute, String attributeValue) throws AuditLogWriteException {
+			SecurityEventAuditMessage message = auditLogMessageFactory.createAuditLogMessage(SecurityEventAuditMessage.class);
+			message.setAction(action);
+			message.setMessage(log);
+			message.addCustomAttribute(attribute, attributeValue);
+			message.log(this.getClass());
+	}
+}
