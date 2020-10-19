@@ -1,0 +1,27 @@
+find etc -type f
+
+touch testFile
+find etc -type f | head -n 5 >> testFile
+
+find etc -type f -maxdepth 1
+
+find etc -type d -maxdepth 1
+
+touch testFile2 | find etc -type d -maxdepth 1 | tails -n 10
+
+wc -c etc/passwd
+wc -l etc/passwd
+
+cd etc
+head -n 12 passwd
+head -c 26 passwd
+tail -n 17 passwd
+sed -n '5p' passwd
+sed -n '13' passwd | tails -c 4
+
+find etc -type f -maxdepth 1
+touch testFile3 | find etc -type f -maxdepth 1 | head -n 5
+find etc -cnewer testFile3
+
+cd~
+find . -type -f -maxdepth 1 -newer testFil3 ! -name testFile3 -delete
