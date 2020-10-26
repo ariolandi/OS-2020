@@ -1,5 +1,7 @@
 # OS-2020
 
+Videos: https://drive.google.com/drive/folders/1HMFvMLCBdNnnSn-v4r-wa0pAEyPFJs3j?usp=sharing
+
 -------------------------------------------------------------
 
  Git:
@@ -10,8 +12,8 @@
 
 -------------------------------------------------------------
 
-https://linuxjourney.com/
-http://linuxcommand.org/tlcl.php
-https://www.tldp.org/
-http://www.linfo.org/
+* https://linuxjourney.com/
+* http://linuxcommand.org/tlcl.php
+* https://www.tldp.org/
+* http://www.linfo.org/
 
