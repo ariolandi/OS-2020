@@ -1,0 +1,85 @@
+Напишете серия от команди, извеждащи на екрана само броя на всички обекти във файловата система, чиито собственик е текущият потребител.
+
+-----------------------------------
+
+Намерете имената на топ 5 файлове в текущата директория с най-много hardlinks.
+
+-----------------------------------
+
+Отпечатайте втората колона на /etc/passwd, разделена спрямо символ '/'.
+Отпечатайте всички редове на файла /etc/passwd, които не съдържат символния низ 'ov'.
+
+
+-----------------------------------
+
+Сортирайте /etc/passwd лексикографски по поле UserID.
+Сортирайте /etc/passwd числово по поле UserID.
+Открийте разликите с лексикографската сортировка.
+
+-----------------------------------
+
+Изведете списък с имената (име и фамилия) и home директориите на всички акаунти от /etc/passwd на съвръра на ФМИ от специалност СИ, подреден по ф.н.
+
+За справка примерно съдържание на файла:
+
+s61988:x:1219:504:Stoian Genchev,SI,2,5:/home/SI/s61988:/bin/bash
+s81430:x:1234:503:Iordan Petkov, KN, k2, g7:/home/KN/s81430:/bin/bash
+s61807:x:1248:504:Elica Venchova:/home/SI/s61807:/bin/bash
+s62009:x:1254:504:Denitsa Dobreva, 2, 6:/home/SI/s62009:/bin/bash
+s61756:x:1258:504:Katrin Kartuleva, SI, 4, 1:/home/SI/s61756:/bin/bash
+s855287:x:1195:504:Vaska Kichukova,SI,2,5:/home/SI/s855287:/bin/bash
+
+Примерен изход:
+
+Katrin Kartuleva:/home/SI/s61756
+Elica Venchova:/home/SI/s61807
+Stoian Genchev:/home/SI/s61988
+Denitsa Dobreva:/home/SI/s62009
+Vaska Kichukova:/home/SI/s855287
+
+-----------------------------------
+
+Копирайте всички файлове от /bin, които могат да се четат, пишат и изпълняват от всички, в bin2 директория в home директорията ви. Направете такава, ако нямате.
+Когато вече сте получили home/../../bin2 с команди, архивирайте всички команди вътре, които започват с b в архив, който се казва b_start.tar. (командата, която архивира е tar -c -f <файл1> <файл2>...)
+
+-----------------------------------
+
+
+Намерете имената на 10-те файла във вашата home директория, чието съдържание е редактирано най-скоро. На първо място трябва да бъде най-скоро редактираният файл. Намерете 10-те най-скоро достъпени файлове. (hint: Unix time)
+
+-----------------------------------
+
+Дадени са ви 2 списъка с email адреси - първият има 12 валидни адреса, а вторията има само невалидни. Адресите са записани във файл в разбъркан ред. Филтрирайте всички адреси, така че да останат само валидните. Какви са изискванията адрес да бъде валиден? Колко кратък регулярен израз можете да направите за целта?
+
+Валидни email адреси (12 на брой):
+email@example.com
+firstname.lastname@example.com
+email@subdomain.example.com
+email@123.123.123.123
+1234567890@example.com
+email@example-one.com
+_______@example.com
+email@example.name
+email@example.museum
+email@example.co.jp
+firstname-lastname@example.com
+unusually.long.long.name@example.com
+
+Невалидни email адреси:
+#@%^%#$@#$@#.com
+@example.com
+myemail
+Joe Smith <email@example.com>
+email.example.com
+email@example@example.com
+.email@example.com
+email.@example.com
+email..email@example.com
+email@-example.com
+email@example..com
+Abc..123@example.com
+(),:;<>[\]@example.com
+just"not"right@example.com
+this\ is"really"not\allowed@example.com
+
+
