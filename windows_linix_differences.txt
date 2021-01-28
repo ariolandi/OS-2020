@@ -1,0 +1,14 @@
+
+Windows: Not Free, Open source: NO, Security: Vulnerable to viruses and malware attacks, File system: AT,FAT32,NTS, ReFs, Separation of the directories: Back Slash, Type of kernel: Microkernel, File Names: case sensitive
+
+Linux: Free, Open source: Yes, Security: more secure, File system: AExT2, EXT3, EXT4,XFS,JFS, Separation of the directories: Forward Slash, Type of kernel: Monolithic kernel, File Names: case insensitive   
+
+
+Differences between MacOs and Linux: Mac OS is based on a Berkeley Software Distribution code base, while Linux is an independent development of a unix-like system. This means that these systems are similar, but not binary compatible. Furthermore, Mac OS has lots of applications that are not open source and are build on libraries that are not open source. Because of this reason, it is not possible to port those applications to run on Linux without being the copyright owner of those applications and libraries.
+
+Based on the statistics Linux is better than Windows also in our case is perfect for programmers. Also Linux is better than MacOs because Linux can be installed on any PC or Mac and its open source.
+
+
+
+
+
